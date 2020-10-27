@@ -47,8 +47,6 @@ def clonacion_evidencia(tipoEvidencia):
         print("Sus resultados se encuentran en: ")
         os.system('cd ./resultados/' + nombreEvidencia.split(".")[0] + ';pwd')
 
-        
-
     #Dependiendo del tipo de evidencia, se realizan unas determinadas acciones
     if (tipoEvidencia == '0'):
         memoria.memoria()
