@@ -23,21 +23,21 @@ def clonacion_evidencia(tipoEvidencia):
     # Booleano para controlar el bucle 
     existe = os.path.isfile(pathClonacion)
 
-    # Si la evidencia clonada ya existe, le damos dos opciones al usuario
+    # Si la evidencia clonada ya existe, le damos dos opciones al usuario: Eliminar y crear una nueva o continuar con la existente
     while (existe):
         print("Evidencia clonada ya existente.")
-        print("Introduzca 0 si desea eliminarla y crear una nueva")
+        print("Introduzca 0 si desea eliminarla y crear una nueva (también se eliminará su carpeta de resultados)")
         print("Introduzca 1 se desea continuar con la existente")
         seleccionUsuario = int(input())
         if (seleccionUsuario == 0):
-            os.system('rm ' + pathClonacion)
+            os.system('rm ' + pathClonacion + ';rm -r ./resultados/' + nombreEvidencia.split(".")[0])
             existe = False
         elif (seleccionUsuario == 1):
             existe = False
         else:
             print("Opción inválida\n")
 
-    # Si no existe la evidencia clonada, la clonamos.
+    # Si no existe la evidencia clonada, la clonamos y creamos su respectiva carpeta de resultados.
     if not os.path.isfile(pathClonacion):
         print("\nClonando evidencia: ")
         os.system('sudo dd if=' + pathEvidencia + ' of=./evidenciasClonadas/' + nombreClonacion + ' status=progress')
@@ -46,6 +46,8 @@ def clonacion_evidencia(tipoEvidencia):
         os.system('mkdir ./resultados/' + nombreEvidencia.split(".")[0] + '/')
         print("Sus resultados se encuentran en: ")
         os.system('cd ./resultados/' + nombreEvidencia.split(".")[0] + ';pwd')
+
+        
 
     #Dependiendo del tipo de evidencia, se realizan unas determinadas acciones
     if (tipoEvidencia == '0'):
