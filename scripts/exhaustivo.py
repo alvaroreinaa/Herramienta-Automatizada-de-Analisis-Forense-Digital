@@ -12,13 +12,11 @@ def exhaustivo(pathEvidencia, nombreEvidencia, pathResultado):
 
     nombreDatos = input("Introduzca el nombre de los archivos en los que quiere recibir los datos: ")
     creacionFichero = nombreDatos + '1.txt'
-   # creacionFichero2 = nombreDatos + '2.txt'
     f = open(creacionFichero, "w")
     f.close()
     
     os.system('cd '+ pathEvidencia + ';file ' + nombreEvidenciaDD + ' > ' + '../'+ creacionFichero)
     fa = open(creacionFichero, "a")
-    #pathUSB = './evidenciasClonadasUSB/' + USBAnalisis 
     fd = os.open(pathFinal, os.O_RDONLY) 
     status = os.fstat(fd) 
     statusFinal = str(status)
@@ -27,7 +25,6 @@ def exhaustivo(pathEvidencia, nombreEvidencia, pathResultado):
     fa.close()
     
     os.system('mv ' + creacionFichero + ' '+ carpeta)
-   # os.system('mv ' + creacionFichero2 + ' '+ carpeta)
 
    
     os.system('fls -m / -rp -f fat32 ' + pathFinal + ' >  ' + nombreDatos + '.fls')
