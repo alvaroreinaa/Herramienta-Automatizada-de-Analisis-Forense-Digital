@@ -2,6 +2,11 @@ import os, subprocess, sys
 from scripts import disco_duro, memoria
 
 def clonacion_evidencia(tipoEvidencia):
+    # Si existe alguna evidencia dentro del directorio le alertamos al usuario
+    if not os.listdir('./evidencias/'):
+        print("La carpeta no contiene evidencias. Por favor, introduzca una para utilizar el programa.")
+        sys.exit()
+
     # Listamos el directorio de evidencias
     print("Evidencias: ")
     os.system('cd evidencias;ls')
@@ -12,7 +17,7 @@ def clonacion_evidencia(tipoEvidencia):
  
     # Comprobamos que la evidencia existe
     while(not os.path.isfile(pathEvidencia)):
-        print("Archivo no encontrado")
+        print("Evidencia no encontrada")
         nombreEvidencia = input("Introduzca el nombre de la evidencia: ")
         pathEvidencia = './evidencias/' + nombreEvidencia
 
@@ -46,8 +51,6 @@ def clonacion_evidencia(tipoEvidencia):
         os.system('mkdir ./resultados/' + nombreEvidencia.split(".")[0] + '/')
         print("Sus resultados se encuentran en: ")
         os.system('cd ./resultados/' + nombreEvidencia.split(".")[0] + ';pwd')
-
-        
 
     #Dependiendo del tipo de evidencia, se realizan unas determinadas acciones
     if (tipoEvidencia == '0'):
