@@ -1,5 +1,5 @@
 import os, subprocess, sys
-from scripts import foremost
+from scripts import foremost, exhaustivo
 
 # Función que lista de manera recursiva todos los archivos existentes (tanto visibles como ocultos) de la imagen montada
 def listar_archivos_existentes_ocultos():
@@ -31,9 +31,10 @@ def disco_duro(pathClonacion, nombreEvidencia):
 
     # Preguntamos al usuario que tipo de accion desea llevar a cabo
     tipoAccion = int(input("Indique el tipo de acccion a realizar:\n"
-                          "1. Recuperar archivos eliminados.\n"
-                          "2. Listar archivos existentes y ocultos.\n"
-                          "3. Finalizar el análisis.\n"))
+                        "1. Recuperar archivos eliminados.\n"
+                        "2. Analizar disco duro.\n"
+                        "3. Listar archivos existentes y ocultos.\n"
+                        "4. Finalizar el análisis.\n"))
 
     
     # Hasta que el usuario no seleccione finalizar el análisis, continuamos preguntando acciones
@@ -41,15 +42,19 @@ def disco_duro(pathClonacion, nombreEvidencia):
         if (tipoAccion == 1):
             foremost.recuperar_archivos_eliminados(pathClonacion, nombreEvidencia, pathResultado)
         elif (tipoAccion == 2):
-            listar_archivos_existentes_ocultos()
+            pathEvidencia = "evidenciasClonadas"
+            exhaustivo.exhaustivo(pathEvidencia, nombreEvidencia, pathResultado)
         elif (tipoAccion == 3):
+            listar_archivos_existentes_ocultos()
+        elif (tipoAccion == 4):
             desmontar_disco()
             sys.exit()
         else:
             print("Error: No ha elegido ningun tipo de acción válida\n")
         tipoAccion = int(input("Indique el tipo de acccion a realizar:\n"
                             "1. Recuperar archivos eliminados.\n"
-                            "2. Listar archivos existentes y ocultos.\n"
-                            "3. Finalizar el análisis.\n"))
+                            "2. Analizar disco duro.\n"
+                            "3. Listar archivos existentes y ocultos.\n"
+                            "4. Finalizar el análisis.\n"))
  
 

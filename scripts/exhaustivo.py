@@ -25,7 +25,6 @@ def exhaustivo(pathEvidencia, nombreEvidencia, pathResultado):
     fa.close()
     
     os.system('mv ' + creacionFichero + ' '+ carpeta)
-
    
     os.system('fls -m / -rp -f fat32 ' + pathFinal + ' >  ' + nombreDatos + '.fls')
     os.system('cat ' + nombreDatos + '.fls > ' + nombreDatos +'.mac')
