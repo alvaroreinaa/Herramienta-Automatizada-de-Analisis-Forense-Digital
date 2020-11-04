@@ -33,7 +33,7 @@ def exhaustivo(pathEvidencia, nombreEvidencia, pathResultado):
     # Guardamos el resultado del comando fls en un archivo .fls
     os.system('fls -m / -rp -f fat32 ' + pathFinal + ' >  ' + nombreDatos + '.fls')
     os.system('cat ' + nombreDatos + '.fls > ' + nombreDatos +'.mac')
-    # Guardamos el resultado del comando mactime en un archivo .mac y des pués lo convertimos en .mactime para poder visualizarlo
+    # Guardamos el resultado del comando mactime en un archivo .mac y después lo convertimos en .mactime para poder visualizarlo
     os.system('mactime -b ' + nombreDatos + '.mac > ' + nombreDatos +'.mactime')
     os.system('mv ' + nombreDatos + '.mactime ' + carpeta)
     os.system('rm ' + nombreDatos + '.fls; rm ' + nombreDatos + '.mac')
