@@ -12,14 +12,14 @@ def usb():
         os.system('lsblk | grep sdb')
         lugarUSBForm = input("Indique la posición en la que se encuentra el USB que desea formatear (Ejemplo: sdb1, sb2, etc...): ")
         decision = input('¿Está seguro de que desea formatear el dispositivo? (Y/N)')
-        if (decision is 'Y'):
+        if (decision == 'Y'):
             os.system('sudo dd if=/dev/zero of=/dev/' + lugarUSBForm +  'status=progress bs=1m')
         else:
             print('Ha decidido no formatear el USB')
             pass
 
     # Elección que nos permite listar los USB clonados al equipo y hacer un clonado de estos
-    elif (usbEleccion== '1'):
+    elif (usbEleccion == '1'):
         print("Estos son los USB conectados al equipo:")
         # Listamos los USB conectados en el momento de la ejecución
         os.system('lsblk | grep sdb')
