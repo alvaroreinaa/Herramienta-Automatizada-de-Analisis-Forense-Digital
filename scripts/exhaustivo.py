@@ -13,7 +13,7 @@ def exhaustivo(pathEvidencia, nombreEvidencia, pathResultado):
     carpeta = pathResultado + '/' + nombreEvidencia
 
     nombreDatos = input("Introduzca el nombre de los archivos en los que quiere recibir los datos: ")
-    creacionFichero = nombreDatos + '1.txt'
+    creacionFichero = nombreDatos + '.txt'
     # Creamos un .txt en el que almacenar los datos 
     f = open(creacionFichero, "w")
     f.close()
