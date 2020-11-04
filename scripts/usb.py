@@ -77,26 +77,3 @@ def usb():
         foremost.recuperar_archivos_eliminados(pathEvidenciaUSBForemost, nombreUSBCarpeta, resultadosCarpetaUSBForemost)
         disco_duro.listar_archivos_existentes_ocultos()
         disco_duro.desmontar_disco()
-        
-
-
-        
-'''
-        print('Información disponible sobre el USB que ha elegido: \n')
-        os.system('cd evidenciasClonadasUSB;file ' + USBAnalisis)
-        pathUSB = './evidenciasClonadasUSB/' + USBAnalisis 
-        print('\n')
-        fd = os.open(pathUSB, os.O_RDONLY) 
-        status = os.fstat(fd) 
-        print(status) 
-        os.close(fd) 
-        nombreDatosUSB = input("Introduzca el nombre del archivo en el que quiere recibir los datos: ")
-        os.system('fls -m / -rp -f fat32 ' + pathUSB + ' >  ' + nombreDatosUSB + '.fls')
-        os.system('cat ' + nombreDatosUSB + '.fls > ' + nombreDatosUSB +'.mac')
-        os.system('mactime -b ' + nombreDatosUSB + '.mac > ' + nombreDatosUSB +'.mactime')
-        os.system('mv ' + nombreDatosUSB + '.mactime resultados/' + nombreUSBCarpeta)
-        os.system('rm ' + nombreDatosUSB + '.fls; rm ' + nombreDatosUSB + '.mac')
-        print('Se ha generado un informe con información sobre esta evidencia en la siguiente ruta: ')
-        os.system('cd resultados/' + nombreUSBCarpeta + ';pwd')
-
-        '''
