@@ -75,5 +75,5 @@ def usb():
 
         #Realizamos las diversas acciones de recuperación y listado de archivos
         foremost.recuperar_archivos_eliminados(pathEvidenciaUSBForemost, nombreUSBCarpeta, resultadosCarpetaUSBForemost)
-        disco_duro.listar_archivos_existentes_ocultos()
+        disco_duro.listar_archivos_existentes_ocultos(resultadosCarpetaUSB + '/', nombreUSBCarpeta)
         disco_duro.desmontar_disco()
