@@ -7,9 +7,12 @@ def clonacion_evidencia(tipoEvidencia):
         print("La carpeta no contiene evidencias. Por favor, introduzca una para utilizar el programa.")
         sys.exit()
 
-    # Listamos el directorio de evidencias
+    # Listamos las evidencias según el tipo que se ha indicado
     print("Evidencias: ")
-    os.system('cd evidencias;ls')
+    if (tipoEvidencia == 0):
+        os.system('cd evidencias;ls | grep ".mem"')
+    elif (tipoEvidencia == 1):
+        os.system('cd evidencias;ls | grep ".img\|.001"')    
  
     # Le pedimos el nombre de la evidencia
     nombreEvidencia = input("Introduzca el nombre de la evidencia: ")
@@ -21,8 +24,12 @@ def clonacion_evidencia(tipoEvidencia):
         nombreEvidencia = input("Introduzca el nombre de la evidencia: ")
         pathEvidencia = './evidencias/' + nombreEvidencia
 
+    # Según el tipo de evidencia, tendrá una extensión u otra
+    if (tipoEvidencia == 0):
+        nombreClonacion = nombreEvidencia.split(".")[0] + ".mem"
+    elif (tipoEvidencia == 1):
+        nombreClonacion = nombreEvidencia.split(".")[0] + ".dd"
     # Almacenamos el path de la clonación
-    nombreClonacion = nombreEvidencia.split(".")[0] + ".dd"
     pathClonacion = './evidenciasClonadas/' + nombreClonacion
     
     # Booleano para controlar el bucle 
@@ -42,20 +49,24 @@ def clonacion_evidencia(tipoEvidencia):
         else:
             print("Opción inválida\n")
 
-    # Si no existe la evidencia clonada, la clonamos y creamos su respectiva carpeta de resultados.
+    # Si no existe la evidencia clonada, la clonamos.
     if not os.path.isfile(pathClonacion):
         print("\nClonando evidencia: ")
         os.system('sudo dd if=' + pathEvidencia + ' of=./evidenciasClonadas/' + nombreClonacion + ' status=progress')
         os.system('cd evidenciasClonadas; md5sum ' + nombreClonacion)        # Realizamos una copia del hash de la evidencia para evitar que se altere
         print("\nSu evidencia se encuentra en: " + pathClonacion)
-        os.system('mkdir ./resultados/' + nombreEvidencia.split(".")[0] + '/')
+    
+    # Si no existe su respectiva carpeta de resultados, la creamos
+    pathResultado = './resultados/' + nombreEvidencia.split(".")[0] + '/'
+    if not os.path.isdir(pathResultado):       
+        os.system('mkdir ' + pathResultado)
         print("Sus resultados se encuentran en: ")
-        os.system('cd ./resultados/' + nombreEvidencia.split(".")[0] + ';pwd')
+        os.system('cd ' + pathResultado + ';pwd')
 
     #Dependiendo del tipo de evidencia, se realizan unas determinadas acciones
-    if (tipoEvidencia == '0'):
+    if (tipoEvidencia == 0):
         memoria.memoria()
-    elif (tipoEvidencia == '1'):
+    elif (tipoEvidencia == 1):
         disco_duro.disco_duro(pathClonacion, nombreEvidencia.split(".")[0])
     else:
         print("FATAL ERROR")
