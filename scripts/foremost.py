@@ -42,38 +42,39 @@ def recuperar_archivos_eliminados(pathClonacion, nombreEvidencia, pathResultado)
     # Según el tipo que haya elegido, lo llevamos a cabo 
     if (tipoRecuperacion >= 1 and tipoRecuperacion <= 8):
         if (tipoRecuperacion == 1):
-            print("Estas recuperando todos los archivos eliminados: ")
-            os.system('foremost -v ' + pathClonacion + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos eliminados: ")
+            os.system('foremost -v ' + pathClonacion + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 2):
             extensionesGraficos = 'gif,jpg,png,bmp'
-            print("Estas recuperando todos los archivos gráficos: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesGraficos + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos gráficos: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesGraficos + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 3):
             extensionesAnimados = 'avi,mov,mpg'
-            print("Estas recuperando todos los archivos animados: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesAnimados + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos animados: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesAnimados + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 4):
             extensionesOffice = 'doc,docx,xls,xlsx,ppt,pptx'
-            print("Estas recuperando todos los archivos Microsoft Office: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesOffice + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos Microsoft Office: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesOffice + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 5):
             extensionesHTML_PDF = 'pdf,html'
-            print("Estas recuperando todos los archivos HTML/PDF: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesHTML_PDF + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos HTML/PDF: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesHTML_PDF + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 6):
             extensionesSonido = 'mp4,wav,wmv'
-            print("Estas recuperando todos los archivos de sonido: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesSonido + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos de sonido: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesSonido + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 7):
             extensionesAdicionales = 'exe,ole,zip,rar,cpp'
-            print("Estas recuperando todos los archivos adicionales: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesAdicionales + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos adicionales: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesAdicionales + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
         elif (tipoRecuperacion == 8):
             extensionesUsuario = recuperacion_personalizada()
-            print("Estas recuperando todos los archivos personalizados: ")
-            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesUsuario + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/')
+            print("\nEstas recuperando todos los archivos personalizados: ")
+            os.system('foremost -v ' + pathClonacion + ' -t ' + extensionesUsuario + ' -o ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/ > /dev/null')
 
         print("Tus archivos recuperados se encuentran en la siguiente carpeta:")
         os.system('cd ' + pathResultado + nombreEvidencia + '/ResultadosRecuperacion/;pwd')
+        print("\n")
     else:
         print("Has seleccionado un tipo de recuperación incorrecta.")
