@@ -65,7 +65,7 @@ def clonacion_evidencia(tipoEvidencia):
 
     #Dependiendo del tipo de evidencia, se realizan unas determinadas acciones
     if (tipoEvidencia == 0):
-        memoria.memoria()
+        memoria.memoria(pathClonacion, nombreEvidencia.split(".")[0])
     elif (tipoEvidencia == 1):
         disco_duro.disco_duro(pathClonacion, nombreEvidencia.split(".")[0])
     else:
