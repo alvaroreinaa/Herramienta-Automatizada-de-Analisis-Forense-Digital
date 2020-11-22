@@ -15,11 +15,7 @@ def desmontar_disco():
 # Función principal 
 def disco_duro(pathClonacion, nombreEvidencia):
     # Antes de montar el disco duro, comprobamos que existe el directorio de montaje temporal
-    if os.path.isdir('/mnt/tmp'):
-        pass
-    else:
-        os.system('mkdir /mnt/tmp')
-    
+    os.makedirs('/mnt/tmp', exist_ok=True)
     print('\nSus disco duro se encuentra montado en la siguiente ruta: ')
     os.system('cd /mnt/tmp;pwd')
 
@@ -29,16 +25,14 @@ def disco_duro(pathClonacion, nombreEvidencia):
     # El path de donde se va a guardar los resultados de los discos duros
     pathResultado = './resultados/'
 
-    # Preguntamos al usuario que tipo de accion desea llevar a cabo
-    tipoAccion = int(input("Indique el tipo de acccion a realizar:\n"
-                        "1. Recuperar archivos eliminados.\n"
-                        "2. Analizar disco.\n"
-                        "3. Listar archivos existentes y ocultos.\n"
-                        "4. Finalizar el análisis.\n"))
-
-    
     # Hasta que el usuario no seleccione finalizar el análisis, continuamos preguntando acciones
     while (True):
+        tipoAccion = int(input("Indique el tipo de acccion a realizar:\n"
+                    "1. Recuperar archivos eliminados.\n"
+                    "2. Analizar disco.\n"
+                    "3. Listar archivos existentes y ocultos.\n"
+                    "4. Finalizar el análisis.\n"))
+
         if (tipoAccion == 1):
             foremost.recuperar_archivos_eliminados(pathClonacion, nombreEvidencia, pathResultado)
         elif (tipoAccion == 2):
@@ -51,10 +45,6 @@ def disco_duro(pathClonacion, nombreEvidencia):
             sys.exit()
         else:
             print("Error: No ha elegido ningun tipo de acción válida\n")
-        tipoAccion = int(input("Indique el tipo de acccion a realizar:\n"
-                            "1. Recuperar archivos eliminados.\n"
-                            "2. Analizar disco.\n"
-                            "3. Listar archivos existentes y ocultos.\n"
-                            "4. Finalizar el análisis.\n"))
+ 
  
 

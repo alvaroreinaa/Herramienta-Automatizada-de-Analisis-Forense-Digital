@@ -10,7 +10,7 @@ def clonacion_evidencia(tipoEvidencia):
     # Listamos las evidencias según el tipo que se ha indicado
     print("Evidencias: ")
     if (tipoEvidencia == 0):
-        os.system('cd evidencias;ls | grep ".mem"')
+        os.system('cd evidencias;ls | grep ".mem\|.vmem"')
     elif (tipoEvidencia == 1):
         os.system('cd evidencias;ls | grep ".img\|.001"')    
  
