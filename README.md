@@ -1,4 +1,4 @@
-# ProyectoCiber
+# Proyecto Ciberseguridad
 _Herramienta de automatización de análisis forense destinada a ser ejecutada en sistemas operativos Ubuntu._
 
 ### Pre-requisitos 📋
@@ -12,7 +12,7 @@ Sleuthkit
 dd
 ```
 
-### Ejecucción ⚙️
+### Ejecución ⚙️
 Para ejecutar la herramienta tendremos que posicionarnos dentro de la carpeta una vez hayamos descargado/clonado el repositorio y ejecutar:
 
 ```
