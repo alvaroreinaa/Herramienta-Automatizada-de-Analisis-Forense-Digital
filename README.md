@@ -2,15 +2,16 @@
 _Herramienta de automatización de análisis forense destinada a ser ejecutada en sistemas operativos Ubuntu._
 
 ### Pre-requisitos 📋
-Para el correcto funcionamiento de la herramienta se necesitará una serie de programas ya instalados en el equipo (se instalarán si no se poseen):
+Para el correcto funcionamiento de la herramienta se necesitará una serie de programas y paquetes ya instalados en el equipo:
 
 ```
-Python3
 Foremost
 Volatility
 Sleuthkit
 dd
 ```
+
+Si no están instalados, se le instalarán cuando ejecute la herramienta y no los detecte en el sistema. En este proceso le pedirá la contraseña del usuario del equipo, por lo que no se preocupe.
 
 ### Ejecución ⚙️
 Para ejecutar la herramienta tendremos que posicionarnos dentro de la carpeta una vez hayamos descargado/clonado el repositorio y ejecutar:
@@ -18,7 +19,11 @@ Para ejecutar la herramienta tendremos que posicionarnos dentro de la carpeta un
 ```
 python3 main.py
 ```
-_Es imprescindible que se ejecute con python3 ya que si no caerá en error la ejecucción_
+_Es imprescindible que se ejecute con python3 ya que si no caerá en error la ejecucción. Si no tiene instalado python en su equipo, ejecute el siguiente comando:_
+
+```
+sudo apt-get install python3
+```
 
 Tras la ejecución, veremos que se han creado una serie de carpetas. Estas poseen nombres autodescriptivos para que el usuario sepa cual es la finalidad de cada una. **_Bajo ningún concepto deben moverse del directorio en el que se han creado, ya que si no el programa las duplicará y podría caer en error._**
 
