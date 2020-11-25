@@ -10,9 +10,9 @@ def clonacion_evidencia(tipoEvidencia):
     # Listamos las evidencias según el tipo que se ha indicado
     print("Evidencias: ")
     if (tipoEvidencia == 0):
-        os.system('cd evidencias;ls | grep ".mem\|.vmem"')
+        os.system('cd evidencias;ls | grep ".mem\|.vmem\|.lime"')
     elif (tipoEvidencia == 1):
-        os.system('cd evidencias;ls | grep ".img\|.001"')    
+        os.system('cd evidencias;ls | grep ".img\|.001\|.raw\|.dd"')    
  
     # Le pedimos el nombre de la evidencia
     nombreEvidencia = input("Introduzca el nombre de la evidencia: ")
