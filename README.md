@@ -2,7 +2,7 @@
 _Herramienta de automatización de análisis forense destinada a ser ejecutada en sistemas operativos Ubuntu._
 
 ### Pre-requisitos 📋
-Para el correcto funcionamiento de la herramienta se necesitará una serie de programas ya instalados en el equipo:
+Para el correcto funcionamiento de la herramienta se necesitará una serie de programas y paquetes ya instalados en el equipo:
 
 ```
 Foremost
@@ -11,7 +11,7 @@ Sleuthkit
 dd
 ```
 
-Si no están instalados, se le instalarán cuando ejecute la herramienta y no los detecte en el sistema. En este proceso le pedirá la contraseña del usuario del equipo.
+Si no están instalados, se le instalarán cuando ejecute la herramienta y no los detecte en el sistema. En este proceso le pedirá la contraseña del usuario del equipo, por lo que no se preocupe.
 
 ### Ejecución ⚙️
 Para ejecutar la herramienta tendremos que posicionarnos dentro de la carpeta una vez hayamos descargado/clonado el repositorio y ejecutar:
