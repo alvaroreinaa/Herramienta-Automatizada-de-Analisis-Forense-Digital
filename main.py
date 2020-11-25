@@ -1,8 +1,11 @@
 import os, subprocess, sys
-from scripts import usb, clonacion_evidencia, crear_carpetas
+from scripts import usb, clonacion_evidencia, crear_carpetas, instalar_programas
 
 # Creamos las carpetas inciales necesarias (en caso de ser la primera ejecución del programa)
 crear_carpetas.crear_carpetas_iniciales()
+# Instalamos los programas necesarios (en caso de que no estén instalados)
+instalar_programas.instalar_programas()
+
 
 # Preguntamos al usuario que tipo de evidencia desea clonar
 tipoEvidencia = int(input("Indique el tipo de evidencia (0 = Memoria, 1 = Disco Duro, 2 = USB): "))
