@@ -9,6 +9,7 @@ Foremost
 Volatility
 Sleuthkit
 dd
+Tshark
 ```
 
 Si no están instalados, se le instalarán cuando ejecute la herramienta y no los detecte en el sistema. En este proceso le pedirá la contraseña del usuario del equipo, por lo que no se preocupe.
