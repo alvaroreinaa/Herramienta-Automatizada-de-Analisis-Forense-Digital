@@ -3,7 +3,7 @@ from shutil import which
 import apt
 
 def instalar_programas():
-    programas = ['foremost','volatility','dd']
+    programas = ['foremost','volatility','dd', 'tshark']
  
     # Para comprobar si los tres programas que necesitamos están instalados, llevamos a cabo esto
     for programa in programas:
