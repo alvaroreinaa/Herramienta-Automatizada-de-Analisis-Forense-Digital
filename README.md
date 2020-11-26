@@ -9,7 +9,7 @@ Foremost
 Volatility
 Sleuthkit
 dd
-Tshark
+Tshark (durante la instalación de este programa le saltará un mensaje para responder "si" o "no". Nuestra recomendación es seleccionar "no")
 ```
 
 Si no están instalados, se le instalarán cuando ejecute la herramienta y no los detecte en el sistema. En este proceso le pedirá la contraseña del usuario del equipo, por lo que no se preocupe.
@@ -20,7 +20,7 @@ Para ejecutar la herramienta tendremos que posicionarnos dentro de la carpeta un
 ```
 python3 main.py
 ```
-_Es imprescindible que se ejecute con python3 ya que si no caerá en error la ejecucción. Si no tiene instalado python en su equipo, ejecute el siguiente comando:_
+_Es imprescindible que se ejecute con python3 o superior ya que si no caerá en error la ejecucción. Si no tiene instalado python en su equipo, ejecute el siguiente comando:_
 
 ```
 sudo apt-get install python3
@@ -34,6 +34,7 @@ La herramienta realiza diferentes análisis según el tipo de evidencia que se i
 1. Análisis de memoria (Windows).
 2. Análisis de discos duros o dispositivos de almacenamiento (Tanto Windows como Linux).
 3. Análisis de dispositivos USB.
+4. Análisis de capturas de red.
 
 Cada una de ellas posee determinadas acciones de análisis para extraer información acerca de la evidencia:
 
@@ -66,6 +67,8 @@ Tipos de análisis y comandos que se llevan a cabo:
 * **Analizar USB:** _A través de Sleuthkit_
 * **Formatear USB:** _A través de dd_
 
+**4. Capturas de red**
+
 ### Construido con 🛠️
 Los lenguajes de programación y herramientas que hemos usado para llevarlo a cabo son:
 * [Python](https://es.python.org/) - Lenguaje de programación.
@@ -74,6 +77,7 @@ Los lenguajes de programación y herramientas que hemos usado para llevarlo a ca
 * [Volatility](https://github.com/volatilityfoundation/volatility) - Framework de análisis de memoria.
 * [Sleuthkit](https://www.sleuthkit.org/) - Software para extraer datos de unidades de disco y otros dispositivos de almacenamiento.
 * [dd](https://es.wikipedia.org/wiki/Dd_(Unix)) - Programa de Linux para clonar evidencias.
+* [Tshark](https://www.wireshark.org/docs/man-pages/tshark.html) - Analizador de protocolos de red.
 
 ### Autores ✒️
 * <a href="https://github.com/ElPertejo"> Ricardo Santos Pertejo </a><br>
