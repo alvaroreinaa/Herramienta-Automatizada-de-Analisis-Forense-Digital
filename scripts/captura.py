@@ -6,7 +6,7 @@ def captura(pathClonacion, nombreEvidencia):
 
     nombreCaptura = nombreEvidencia + '.pcap'
     while (True):
-        tipoAnalisis = int(input("\nIndique el tipo de análisis que desea realizar:\n\n\t1. Extracción completa\n\t2. Extracción de archivos\n\t3. Extracción de consultas DNS con dirección IP de respuesta y hora de la petición\n\t4. Búsqueda (No funcional)\n\t5. Información sobre la captura de red\n\t6. Extracción de contraseñas\n\t7. Terminar extracción \n\n  > "))
+        tipoAnalisis = int(input("\nIndique el tipo de análisis que desea realizar: \n\n\t1. Extracción completa\n\t2. Extracción de archivos\n\t3. Extracción de consultas DNS con dirección IP de respuesta y hora de la petición\n\t4. Búsqueda (No funcional)\n\t5. Información sobre la captura de red\n\t6. Extracción de contraseñas\n\t7. Terminar extracción \n\n  > "))
         if (tipoAnalisis == 1):
 
             # Este comando imprime todo el contenido de la captura seleccionada y crea un fichero con los resultados
