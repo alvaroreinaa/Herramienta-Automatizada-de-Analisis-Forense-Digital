@@ -68,6 +68,11 @@ Tipos de análisis y comandos que se llevan a cabo:
 * **Formatear USB:** _A través de dd_
 
 **4. Capturas de red**
+Tipos de análisis y comandos que se llevan a cabo:
+* **Analizar captura:** _A través de comandos de tshark_
+* **Recuperación de archivos enviados por distintos protocolos:** _A través de comandos de tshark_
+* **Extracción de contraseñas por protocolo HTTP:** _A través de comandos de tshark_
+* **Búsqueda personalizada (Próximamente)**
 
 ### Construido con 🛠️
 Los lenguajes de programación y herramientas que hemos usado para llevarlo a cabo son:
