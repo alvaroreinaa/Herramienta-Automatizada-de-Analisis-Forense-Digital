@@ -12,7 +12,9 @@ def clonacion_evidencia(tipoEvidencia):
     if (tipoEvidencia == 0):
         os.system('cd evidencias;ls | grep ".mem\|.vmem\|.lime"')
     elif (tipoEvidencia == 1):
-        os.system('cd evidencias;ls | grep ".img\|.001\|.raw\|.dd"')    
+        os.system('cd evidencias;ls | grep ".img\|.001\|.raw\|.dd"')
+    elif (tipoEvidencia == 3):
+        os.system('cd evidencias;ls | grep ".pcap"') 
  
     # Le pedimos el nombre de la evidencia
     nombreEvidencia = input("Introduzca el nombre de la evidencia: ")
@@ -29,6 +31,8 @@ def clonacion_evidencia(tipoEvidencia):
         nombreClonacion = nombreEvidencia.split(".")[0] + ".mem"
     elif (tipoEvidencia == 1):
         nombreClonacion = nombreEvidencia.split(".")[0] + ".dd"
+    elif (tipoEvidencia == 3):
+        nombreClonacion = nombreEvidencia.split(".")[0] + ".pcap"
     # Almacenamos el path de la clonación
     pathClonacion = './evidenciasClonadas/' + nombreClonacion
     
@@ -68,6 +72,8 @@ def clonacion_evidencia(tipoEvidencia):
         memoria.memoria(pathClonacion, nombreEvidencia.split(".")[0])
     elif (tipoEvidencia == 1):
         disco_duro.disco_duro(pathClonacion, nombreEvidencia.split(".")[0])
+    elif (tipoEvidencia == 3):
+        captura.captura(pathClonacion, nombreEvidencia.split(".")[0])
     else:
         print("FATAL ERROR")
 
