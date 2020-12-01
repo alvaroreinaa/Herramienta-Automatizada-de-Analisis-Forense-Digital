@@ -1,5 +1,5 @@
 import os, subprocess, sys
-from scripts import disco_duro, memoria
+from scripts import disco_duro, memoria, captura
 
 def clonacion_evidencia(tipoEvidencia):
     # Si existe alguna evidencia dentro del directorio le alertamos al usuario
