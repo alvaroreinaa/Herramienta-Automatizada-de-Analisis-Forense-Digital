@@ -19,6 +19,10 @@ def exhaustivo(pathEvidencia, nombreEvidencia, pathResultado):
     f.close()
     # Guardamos el resultado del comando file en dicho archivo
     os.system('cd '+ pathEvidencia + ';file ' + nombreEvidenciaDD + ' > ' + '../'+ creacionFichero)
+    # Guardamos el resultado del comando fsstat en dicho archivo
+    os.system('cd '+ pathEvidencia + ';fsstat ' + nombreEvidenciaDD + ' >> ' + '../'+ creacionFichero)
+    # Guardamos el resultado del comando fdisk en dicho archivo
+    os.system('cd '+ pathEvidencia + ';fdisk -lu ' + nombreEvidenciaDD + ' >> ' + '../'+ creacionFichero)
     fa = open(creacionFichero, "a")
     # Guardamos los resultados de la función fstat en el mismo archivo
     fd = os.open(pathFinal, os.O_RDONLY) 
