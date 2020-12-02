@@ -9,8 +9,9 @@ Foremost
 Volatility
 Sleuthkit
 dd
-Tshark (durante la instalación de este programa le saltará un mensaje para responder "si" o "no". Nuestra recomendación es seleccionar "no")
+Tshark 
 ```
+_Durante la instalación de tshark, llegará un punto que la barra no parpadee, ahí tendrá que presionar enter y espacio para que la instalación continue_
 
 Si no están instalados, se le instalarán cuando ejecute la herramienta y no los detecte en el sistema. En este proceso le pedirá la contraseña del usuario del equipo, por lo que no se preocupe.
 
