@@ -40,5 +40,6 @@ def crear_carpetas_iniciales():
         os.system('mkdir resultadosUSB')
         print('Sus resultados de USB se encuentran en la siguiente ruta: ')
         os.system('cd resultadosUSB;pwd')
+        print('\n')
         
-    print('\n')
+  
