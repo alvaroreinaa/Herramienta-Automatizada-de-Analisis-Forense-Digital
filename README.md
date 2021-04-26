@@ -1,4 +1,4 @@
-# Proyecto Ciberseguridad
+# Herramienta automatizada de análisis forense digital
 _Herramienta de automatización de análisis forense destinada a ser ejecutada en sistemas operativos Ubuntu._
 
 ### Pre-requisitos 📋
